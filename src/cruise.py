@@ -2,7 +2,7 @@ from src.ship import Ship
 
 
 class Cruise(Ship):
-    def __init__(self, passengers, draft, crew):
+    def __init__(self, passengers=0, draft=0.0, crew=0):
         Ship.__init__(self, draft, crew)
         self.passengers = passengers
 

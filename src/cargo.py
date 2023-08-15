@@ -2,10 +2,10 @@ from src.ship import Ship
 
 
 class Cargo(Ship):
-    def __init__(self, cargo, quality, draft, crew):
+    def __init__(self, cargo=0.0, quality=0.0, draft=0.0, crew=0):
         Ship.__init__(self, draft, crew)
-        self.cargo = cargo
-        self.quality = quality
+        self.cargo = float(cargo)
+        self.quality = float(quality)
 
     def is_worth_it(self):
         carga = self.draft
