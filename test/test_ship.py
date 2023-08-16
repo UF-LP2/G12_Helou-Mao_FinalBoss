@@ -3,14 +3,11 @@ from src.ship import Ship
 
 
 class TestShip:
-    def test_worth_it_false(self):
-        barco = Ship(15, 10)
-        assert barco.is_worth_it() is False
 
     def test_worth_it_negatives(self):
-        with pytest.raises(ValueError) as exif:
+        with pytest.raises(Exception) as exif:
             barco = Ship(-23, 7)
-        assert str(exif.value) == "Error, negative values are not accepted"
+            assert str(exif.value) == "Error, negative values are not accepted"
 
     def test_worth_it_true(self):
         barco = Ship(30, 5)

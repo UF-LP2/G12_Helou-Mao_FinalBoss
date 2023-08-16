@@ -1,14 +1,21 @@
+
 from src.lecturaArchivo import read_file
-from src.ship import Ship
-import csv
-from src.cargo import Cargo
-from src.cruise import Cruise
 
 
 def main() -> None:
+    ship = []
     ship = read_file()
-    for x in ship:
-        print(x.crew)
+
+    for i in range(len(ship)-1):
+        x = ship[i]
+        try:
+            booleano = x.is_worth_it()
+            print("\n Se saquea")
+            print(x.draft)
+        except Exception:
+                print("\n No se saquea")
+
+
 
 
 if __name__ == "__main__":
