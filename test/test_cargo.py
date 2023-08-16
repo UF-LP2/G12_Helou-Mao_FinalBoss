@@ -8,15 +8,16 @@ class TestCargo:
 
     def test_worth_it_invalid(self):
         with pytest.raises(Exception) as exif:
-            barco = Cargo(10, 7, 15, 1)
-            assert str(exif.value) == "Error, invalid quantity"
+            barco = Cargo(10, 7, 15, 2)
+            assert str(exif.value) == "Error, invalid values"
+
         with pytest.raises(Exception) as exif:
             barco = Cargo(-10, 7, 15, 1)
-            assert str(exif.value) == "Error, invalid quantity"
+            assert str(exif.value) == "Error, invalid values"
 
     def test_worth_it_false(self):
         with pytest.raises(Exception) as exif:
-            barco = Cargo(10, 7, 15, 2)
-            assert str(exif.value) == "Error, invalid values"
+            barco = Cargo(10, 7, 15, 1)
+            assert str(exif.value) == "No fue saqueado"
 
 

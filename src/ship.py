@@ -14,7 +14,7 @@ class Ship(object):  # draft: peso total , crew: personas
         if load > 20:
             return True
         else:
-            raise Exception
+            raise Exception("No fue saqueado")
 
     def print_crew(self) -> None:
         print(self.crew)
